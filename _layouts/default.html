@@ -1,35 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-  {% include head.html %} 
+  {% include head.html %}
+  <script>
+    $(function() {
+      var $window = $(window),
+	$body = $('body');
+      // Disable animations/transitions until the page has loaded.
+      $window.on('load', function() {
+	window.setTimeout(function() {
+	  $body.removeClass('is-loading');
+	}, 100);
+      });
+
+      // Prioritize "important" elements on medium.
+      //skel.on('+medium -medium', function() {
+//	$.prioritize(
+//	  '.important\\28 medium\\29',
+//	  skel.breakpoint('medium').active
+//	);
+ //     });
+    })(jQuery);
+  </script>
   <title>{% if page.title %} {{ page.title }}  {% endif %} {{ site.name }}</title>
 
   <script>
     {% include data.js %}
   </script>
 
-  <script>
-    $(document).on("pageshow",function(){
-     console.log("pageshow event");
-     var this_object = data.pathname_to_object[window.location.pathname];   
-     if (this_object) {
-      $(".prev").html("<a href='" + this_object.prev.url + "'>prev</a>");
-      $(".next").html("<a href='" + this_object.next.url + "'>next</a>");
-     }
-   });
-  </script>
-    
-
+  <!-- <script> -->
+  <!--   $(document).on("pageshow",function(){ -->
+  <!--    console.log("pageshow event"); -->
+  <!--    var this_object = data.pathname_to_object[window.location.pathname]; -->
+  <!--    if (this_object) { -->
+  <!--     $(".prev").html("<a href='" + this_object.prev.url + "'>prev</a>"); -->
+  <!--     $(".next").html("<a href='" + this_object.next.url + "'>next</a>"); -->
+  <!--    } -->
+  <!--  }); -->
+  <!-- </script> -->
   </head>
-  <body id="page-top">
-    <div id="container" data-role="page">
-    {% include nav.html %}
-    <div id="content"  class="ui-content">
-    {% if page.title %}<h1>{{page.title}}</h1>{% endif %}
-    {% if page.desc %}<p class="desc">{{page.desc}}</p>{% endif %}
-    {{ content }}
-    </div><!-- content -->
-    {% include footer.html %}
-    </div><!-- container -->
+  <body>
+  <!-- <div id="cover"></div> -->
+    <!-- <div id="container" data-role="page"> -->
+    <!-- {% include nav.html %} -->
+    <div id="framer">
+      <img id="logo" src="/ccs_smoother.png">
+      <div id="main-content">
+	{% include students.md %}
+	{% include alumni.md %}
+	{% include faculty.md %}
+      </div>
+    </div>
+    <!-- </div><1!-- content --1> -->
+    <!-- {% include footer.html %} -->
+    <!-- </div><1!-- container --1> -->
   </body>
 </html>
