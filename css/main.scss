@@ -1,4 +1,8 @@
-@import "skel";
+---
+# Front matter comment to ensure Jekyll properly reads file.
+---
+
+@import 'lib/skel';
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 @import url('https://fonts.googleapis.com/css?family=Amaranth');
 @import url('https://fonts.googleapis.com/css?family=Montserrat:600');
@@ -10,13 +14,15 @@ $title-font: 'Montserrat', sans-serif;
 $tombstone-ratio: 4 / 7;
 $tombstone-height: 275px;
 $tombstone-width: $tombstone-ratio * $tombstone-height;
-$tombstone-tag-height: 33%;
+$tombstone-tag-height: 15%;
 $tombstone-image-padding: 5%;
+
+
 
 section {
   margin-top: 10em;
 }
-#cover {content: ""; position: fixed; top:0; left: 0; right: 0; bottom: 0;background: #ffffff; z-index:9999;}
+#cover {content: ""; position: fixed; top:0; left: 0; right: 0; bottom: 0;background: $uc-blue; z-index:9999;}
 #circle {
   display: flex;
   flex-flow: column nowrap;
@@ -70,19 +76,15 @@ body {
   font-family: $font-stack;
   font-weight: normal;
   background-color: $uc-blue;
-  &.is-loading {
-    *, *:before, *:after {
-      @include vendor('animation', 'none !important');
-      @include vendor('transition', 'none !important');
-    }
-  }
+  // background: url(/res/better.jpg) no-repeat center center fixed;
+  // background-size: cover;
 }
 
 body::after {
   content: "";
-  background: url(better.jpg) no-repeat center center fixed;
+  background: url(/res/better.jpg) no-repeat center center fixed;
   background-size: cover;
-  opacity: 0.3;
+  opacity: 0.4;
   top: 0;
   left: 0;
   bottom: 0;
@@ -100,6 +102,10 @@ body::after {
 }
 
 .student-tombstone {
+  text-decoration: none;
+  &, &:active, &:hover, &:visited {
+    color: black;
+  }
   width: $tombstone-width;
   height: $tombstone-height;
   text-align: center;
@@ -110,16 +116,14 @@ body::after {
   .student-tag {
     background-color: $uc-gold;
     width: 100%;
-    height: $tombstone-tag-height;
+    height: 100%;
     margin: 0 0 0 0;
   }
 
   .student-image {
-    margin: 5% auto 5% auto;
+    margin: $tombstone-image-padding auto $tombstone-image-padding auto;
     width: 90%;
-    height: 100% - $tombstone-tag-height - (2 * $tombstone-image-padding) * ((100% - $tombstone-tag-height)/100%) + 1%;
-    background-image: attr(content url);
-    background-size: cover;
+    height: 100% - $tombstone-tag-height - (2 * $tombstone-image-padding);
     position: relative;
 
     .top {

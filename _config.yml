@@ -5,6 +5,9 @@ exclude: ['vendor', 'setup.sh', 'jekyll.sh']
 
 timezone: America/Los_Angeles
 
+sass:
+  sass_dir: _sass
+
 collections:
 
   faculty:
@@ -18,6 +21,10 @@ collections:
   alumni:
     output: true
     permalink: /alumni/:path/
+
+  resources:
+    output: true
+    permalink: /res/:path/
 
 
 defaults:

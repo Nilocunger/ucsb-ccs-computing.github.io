@@ -2,26 +2,13 @@
 <html lang="en">
   <head>
   {% include head.html %}
-  <script>
-    $(function() {
-      var $window = $(window),
-	$body = $('body');
-      // Disable animations/transitions until the page has loaded.
-      $window.on('load', function() {
-	window.setTimeout(function() {
-	  $body.removeClass('is-loading');
-	}, 100);
-      });
-
-      // Prioritize "important" elements on medium.
-      //skel.on('+medium -medium', function() {
-//	$.prioritize(
-//	  '.important\\28 medium\\29',
-//	  skel.breakpoint('medium').active
-//	);
- //     });
-    })(jQuery);
-  </script>
+  <!-- <script> -->
+  <!--   $(window).on('load', function() { -->
+  <!--     window.setTimeout(function() { -->
+	<!-- $("#cover").fadeOut(200); -->
+  <!--     }, 200); -->
+  <!--   }); -->
+  <!-- </script> -->
   <title>{% if page.title %} {{ page.title }}  {% endif %} {{ site.name }}</title>
 
   <script>
@@ -44,7 +31,7 @@
     <!-- <div id="container" data-role="page"> -->
     <!-- {% include nav.html %} -->
     <div id="framer">
-      <img id="logo" src="/ccs_smoother.png">
+      <img id="logo" src="/res/ccs_smoother.png">
       <div id="main-content">
 	{% include students.md %}
 	{% include alumni.md %}
