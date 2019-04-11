@@ -1,12 +1,16 @@
-  <h2>Sample Faculty Profiles</h2>
-  <table>
-   {% for person in site.faculty %}
-   <tr>
-     <td>
-      <img src="{{ person.url }}/50h.jpg" alt="thumbnail" >
-     </td>
-     <td><a href="{{person.url}}">{{ person.name }}</a></td>
-     </tr>
-   {% endfor %}
+<h1>Faculty Profiles</h1>
 
-  </table>
+<div class="profilecontainer">
+{% for faculty in site.faculty %}
+  <a href="{{ faculty.url }}">
+    <div class="profile">
+      <div class="profile-pic">
+        <img src="{{ faculty.url }}/300h.jpg">
+      </div>
+      <div>
+        {{faculty.name}}
+      </div>
+    </div>
+  </a>
+{% endfor %}
+</div>

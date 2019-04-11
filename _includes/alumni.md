@@ -1,22 +1,20 @@
-  <h2>Sample Alumni Profiles</h2>
 
-  <table>
-    <thead>
-  <tr><th>pic</th><th>name</th><th>affiliation</th><th>city</th></tr>
-  </thead>
+<h1>Alumni Profiles</h1>
 
-<tbody>
-
+<div class="profilecontainer">
 {% for alum in site.alumni %}
-   <tr>
-     <td class="pic">
-      <img src="{{ alum.url }}50h.jpg" alt="thumbnail" >
-     </td>
-     <td class="name"><a href="{{alum.url}}">{{ alum.name }}</a></td>
-     <td class="affiliation">{{alum.affiliation}}</td>
-          <td class="city">{{alum.city}}</td>	
-     </tr>
-   {% endfor %}
-  </tbody>
-  </table>
-
+  <a href="{{ alum.url }}">
+    <div class="profile">
+      <div class="profile-pic">
+        <img src="{{ alum.url }}/300h.jpg">
+      </div>
+      <div>
+        {{alum.name}}
+        <br/>
+        {{alum.affiliation}}
+        <br/>
+        {{alum.city}}
+      </div>
+    </div>
+  </a>
+{% endfor %}

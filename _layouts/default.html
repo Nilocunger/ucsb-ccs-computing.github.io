@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-  {% include head.html %} 
+  {% include head.html %}
   <title>{% if page.title %} {{ page.title }}  {% endif %} {{ site.name }}</title>
 
   <script>
@@ -11,24 +11,22 @@
   <script>
     $(document).on("pageshow",function(){
      console.log("pageshow event");
-     var this_object = data.pathname_to_object[window.location.pathname];   
+     var this_object = data.pathname_to_object[window.location.pathname];
      if (this_object) {
       $(".prev").html("<a href='" + this_object.prev.url + "'>prev</a>");
       $(".next").html("<a href='" + this_object.next.url + "'>next</a>");
      }
    });
   </script>
-    
+
 
   </head>
   <body id="page-top">
     <div id="container" data-role="page">
     {% include nav.html %}
-    <div id="content"  class="ui-content">
-    {% if page.title %}<h1>{{page.title}}</h1>{% endif %}
-    {% if page.desc %}<p class="desc">{{page.desc}}</p>{% endif %}
-    {{ content }}
-    </div><!-- content -->
+    <div id="contentcontainer">
+    {% include main.html %}
+    </div>
     {% include footer.html %}
     </div><!-- container -->
   </body>
