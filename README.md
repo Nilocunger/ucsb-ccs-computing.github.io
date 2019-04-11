@@ -22,6 +22,7 @@ $ vagrant up
 $ vagrant ssh
 ...
 $ cd /vagrant && ./jekyll-vagrant.sh
+...
 ```
 
 # Resizing images with Imagemagick
