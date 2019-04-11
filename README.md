@@ -16,9 +16,13 @@ website: https://ucsb-ccs-computing.github.io
     * Point browser to localhost:4000
 
 ## Vagrant Setup
-* `vagrant up`
-* `vagrant ssh`
-* `cd /vagrant && ./jekyll-vagrant.sh`
+```
+$ vagrant up
+...
+$ vagrant ssh
+...
+$ cd /vagrant && ./jekyll-vagrant.sh
+```
 
 # Resizing images with Imagemagick
 
