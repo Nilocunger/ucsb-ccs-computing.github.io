@@ -6,7 +6,7 @@ For shared resources, articles, and student/alumni/faculty profiles.
 
 website: https://ucsb-ccs-computing.github.io
 
-To test locally:
+## Standard Setup
 * One time setup:
     * `git clone` the repo
     * Install rvm (the Ruby version manager)
@@ -14,6 +14,11 @@ To test locally:
 * From then on, to test the site locally:
     * Run `./jekyll.sh
     * Point browser to localhost:4000
+
+## Vagrant Setup
+* `vagrant up`
+* `vagrant ssh`
+* `cd /vagrant && ./jekyll-vagrant.sh`
 
 # Resizing images with Imagemagick
 
@@ -26,7 +31,7 @@ To convert images of arbitrary size to 300 pixels of height, while maintaining a
 convert -resize x300 orig.jpg 300h.jpg
 ```
 
-To convert images of arbitrary size to 50 pixels high, 
+To convert images of arbitrary size to 50 pixels high,
 
 ```
 convert -resize x50 orig.jpg 50h.jpg
